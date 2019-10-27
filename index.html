@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        h1 {
+            padding: 20px;
+            text-align: center;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <h1>Ծրագրավորում III Ստեփանակերտ</h1>
+            </tr>
+            <tr>
+                <h1>Ալիսա Հայրապետյան</h1>
+            </tr>
+            <tr>
+                <td>Եղանակ</td>
+                <td id="weather"></td>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Գույն</th>
+                <th scope="col">Նկարագրություն</th>
+                <th scope="col">Ծնվել է</th>
+                <th scope="col">Այս պահին կա</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td scope="row" style="background-color:green;"></td>
+                <td>Կանաչը (խոտ) բազմանում է 8 ցիկլը մեկ,շարժվում է 8 ուղղությամբ:Նրա գույնը փոխվում է ըստ եղանակի:</td>
+                <td id="grassCount"></td>
+                <td id="grassLiveCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="row" style="background-color:yellow;"></td>
+                <td>Դեղինը (խոտակեր) ուտում է կանաչին, և բազմանում  8 հատ ուտելուց հետո,շարժվում է 8 ուղղությամբ, մահանում 210 վանդակ անցնելուց հետո:</td>
+                <td id="grassEaterCount"></td>
+                <td id="grassEaterLiveCount"></td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td scope="row" style="background-color:red;"></td>
+                <td>Կարմիրը (գիշատիչ)ուտում է դեղինին և բազմանում է 3 հատ ուտելուց հետո, մահանում 180 վանդակ անցնելուց հետո,շարժվում է 8 ուղղությամբ:</td>
+                <td id="gishatichCount"></td>
+                <td id="gishatichLiveCount"></td>
+
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color: black;"></td>
+                <td>Սևը (տղա) շարժվում է իրեն շրջապատող 16 ուղղություններով, ուտում է գիշատչին, աղջկան և հրեշին, բազմանում է 15 հատ գիշատիչ, աղջիկ և հրեշ, ուտելուց հետո,ոչ մի դեպքում չի  մահանում :</td>
+                <td id="txaCount"></td>
+                <td id="txaLiveCount"></td>
+
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:pink;"></td>
+                <td>Վարդագույն(աղջիկ) շարժվում է 8 ուղղություններով(ուղղահայաց և հորիզոնական),ոչինչ չի ուտում, բազմանում է ազատ վանդակների և խոտերի հաշվին։
+                    </td>
+                <td id="axjikCount"></td>
+                <td id="axjikLiveCount"></td>
+
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td scope="row" style="background-color:#00ffe8;"></td>
+                <td>Սառը կանաչ(Հրեշ) շարժվում է 8 ուղղություններով,ուտում է տղային, մահանում է 180 վանդակ անցնելուց հետո, երբ Էներգիան բավական է բազմանում է:  </td>
+                <td id="hreshCount"></td>
+                <td id="hreshLiveCount"></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <script src="p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
